@@ -1,0 +1,6 @@
+{
+  "name": "PricePulse - Automated Deal & Price Drop Tracker",
+  "description": "Automated deal tracker and price monitor. Runs real-time price checks across favorite retailers and triggers push notifications when target price thresholds are met.",
+  "requestFramePermissions": ["notifications"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
