@@ -35,6 +35,21 @@ export const DealCard: React.FC<DealCardProps> = ({
   onDelete,
 }) => {
   const [isChecking, setIsChecking] = useState(false);
+  const [isErrorDismissed, setIsErrorDismissed] = useState(false);
+
+  const cleanErrorText = (err: string) => {
+    if (!err) return '';
+    if (err.includes('429') || err.includes('quota') || err.includes('RESOURCE_EXHAUSTED')) {
+      return 'Search rate limit cooldown active — using direct web scraper';
+    }
+    try {
+      const parsed = JSON.parse(err);
+      if (parsed.error?.message) return parsed.error.message.split('.')[0];
+    } catch {
+      // not json
+    }
+    return err.length > 80 ? err.slice(0, 80) + '...' : err;
+  };
 
   const handleCheck = async () => {
     try {
@@ -215,10 +230,19 @@ export const DealCard: React.FC<DealCardProps> = ({
           </span>
         </div>
 
-        {deal.lastError && (
-          <div className="mt-2 flex items-center gap-1.5 rounded-lg bg-rose-500/10 p-2 text-xs text-rose-400 border border-rose-500/20">
-            <AlertCircle className="h-3.5 w-3.5 flex-shrink-0" />
-            <span className="line-clamp-1">{deal.lastError}</span>
+        {deal.lastError && !isErrorDismissed && (
+          <div className="mt-2 flex items-center justify-between gap-1.5 rounded-lg bg-amber-500/10 p-2 text-xs text-amber-300 border border-amber-500/20">
+            <div className="flex items-center gap-1.5 min-w-0">
+              <AlertCircle className="h-3.5 w-3.5 flex-shrink-0 text-amber-400" />
+              <span className="truncate">{cleanErrorText(deal.lastError)}</span>
+            </div>
+            <button
+              onClick={() => setIsErrorDismissed(true)}
+              className="text-amber-400/70 hover:text-amber-200 text-xs px-1 font-bold"
+              title="Dismiss note"
+            >
+              &times;
+            </button>
           </div>
         )}
       </div>

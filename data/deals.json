@@ -6,25 +6,38 @@
     "model": "NXT1A06",
     "sku": "100662617",
     "url": "https://www.homedepot.com/p/Werner-6-ft-Fiberglass-Step-Ladder-10-ft-Reach-Height-with-300-lb-Load-Capacity-Type-IA-Duty-Rating-NXT1A06/100662617",
-    "favoriteWebsites": ["Home Depot", "Lowe's", "Amazon"],
+    "favoriteWebsites": [
+      "Home Depot",
+      "Lowe's",
+      "Amazon"
+    ],
     "targetPrice": 100,
-    "currentPrice": 119.00,
-    "initialPrice": 119.00,
-    "lowestPrice": 114.00,
+    "currentPrice": 119,
+    "initialPrice": 119,
+    "lowestPrice": 114,
     "currency": "USD",
     "inStock": true,
     "isTriggered": false,
     "notifyOnDropOnly": true,
-    "lastCheckedAt": "2026-10-14T11:45:00.000Z",
+    "lastCheckedAt": "2026-10-14T17:00:28.575Z",
     "status": "active",
     "imageUrl": "https://images.thdstatic.com/productImages/3f707f7c-7a95-46ff-b97c-9efc8629ca9a/svn/werner-step-ladders-nxt1a06-64_600.jpg",
     "category": "Tools & Hardware",
-    "notes": "Trigger push notification only when price drops below $100.",
+    "notes": "Trigger push notification only when price drops below target price.",
     "history": [
+      {
+        "id": "log-1791997228890-xw9cx",
+        "timestamp": "2026-10-14T17:00:28.575Z",
+        "price": 119,
+        "retailer": "Home Depot",
+        "sourceUrl": "https://www.homedepot.com/p/Werner-6-ft-Fiberglass-Step-Ladder-10-ft-Reach-Height-with-300-lb-Load-Capacity-Type-IA-Duty-Rating-NXT1A06/100662617",
+        "inStock": true,
+        "statusMessage": "Rate limit active — retained verified price $119.00"
+      },
       {
         "id": "hist-1",
         "timestamp": "2026-10-12T14:00:00.000Z",
-        "price": 124.00,
+        "price": 124,
         "retailer": "Home Depot",
         "inStock": true,
         "statusMessage": "Initial baseline logged"
@@ -32,10 +45,10 @@
       {
         "id": "hist-2",
         "timestamp": "2026-10-13T10:30:00.000Z",
-        "price": 119.00,
+        "price": 119,
         "retailer": "Home Depot",
         "inStock": true,
-        "statusMessage": "Price decreased by $5.00 (still above $100 target)"
+        "statusMessage": "Price decreased by $5.00"
       }
     ]
   },
@@ -46,16 +59,20 @@
     "model": "DCD771C2",
     "sku": "DCD771C2",
     "url": "https://www.homedepot.com/p/DEWALT-20V-MAX-Cordless-1-2-in-Drill-Driver-Kit-with-2-20V-1-3Ah-Batteries-Charger-and-Bag-DCD771C2/204279858",
-    "favoriteWebsites": ["Home Depot", "Amazon", "Lowe's"],
-    "targetPrice": 99.00,
-    "currentPrice": 99.00,
-    "initialPrice": 119.00,
-    "lowestPrice": 99.00,
+    "favoriteWebsites": [
+      "Home Depot",
+      "Amazon",
+      "Lowe's"
+    ],
+    "targetPrice": 99,
+    "currentPrice": 99,
+    "initialPrice": 119,
+    "lowestPrice": 99,
     "currency": "USD",
     "inStock": true,
     "isTriggered": true,
     "notifyOnDropOnly": true,
-    "lastCheckedAt": "2026-10-14T12:00:00.000Z",
+    "lastCheckedAt": "2026-10-14T16:53:22.473Z",
     "status": "triggered",
     "imageUrl": "https://images.thdstatic.com/productImages/599e693b-e01c-4b55-b44c-e87f8eb4f9d0/svn/dewalt-drills-dcd771c2-64_600.jpg",
     "category": "Power Tools",
@@ -64,7 +81,7 @@
       {
         "id": "hist-3",
         "timestamp": "2026-10-10T09:00:00.000Z",
-        "price": 119.00,
+        "price": 119,
         "retailer": "Home Depot",
         "inStock": true,
         "statusMessage": "Checked price"
@@ -72,7 +89,7 @@
       {
         "id": "hist-4",
         "timestamp": "2026-10-14T12:00:00.000Z",
-        "price": 99.00,
+        "price": 99,
         "retailer": "Home Depot",
         "inStock": true,
         "statusMessage": "Target price reached: $99.00!"
@@ -86,11 +103,16 @@
     "model": "WH-1000XM5",
     "sku": "WH1000XM5/B",
     "url": "https://www.bestbuy.com/site/sony-wh-1000xm5-wireless-noise-canceling-over-the-ear-headphones-black/6505727.p",
-    "favoriteWebsites": ["Best Buy", "Amazon", "B&H Photo", "Target"],
-    "targetPrice": 298.00,
+    "favoriteWebsites": [
+      "Best Buy",
+      "Amazon",
+      "B&H Photo",
+      "Target"
+    ],
+    "targetPrice": 298,
     "currentPrice": 349.99,
     "initialPrice": 399.99,
-    "lowestPrice": 328.00,
+    "lowestPrice": 328,
     "currency": "USD",
     "inStock": true,
     "isTriggered": false,

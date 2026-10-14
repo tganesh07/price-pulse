@@ -127,6 +127,9 @@ app.put('/api/deals/:id', (req: Request, res: Response) => {
       id, // Preserve immutable id
     };
 
+    // Clear any previous error when user updates deal
+    delete updated.lastError;
+
     if (updated.currentPrice !== null && updated.targetPrice) {
       updated.isTriggered = updated.currentPrice <= updated.targetPrice;
       if (updated.status !== 'paused') {
