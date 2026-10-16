@@ -23,7 +23,7 @@ interface DealCardProps {
   onTestNotification: (deal: DealItem) => void;
   onOpenHistory: (deal: DealItem) => void;
   onEdit: (deal: DealItem) => void;
-  onDelete: (id: string) => void;
+  onDelete: (deal: DealItem) => void;
 }
 
 export const DealCard: React.FC<DealCardProps> = ({
@@ -304,7 +304,7 @@ export const DealCard: React.FC<DealCardProps> = ({
           </button>
 
           <button
-            onClick={() => onDelete(deal.id)}
+            onClick={() => onDelete(deal)}
             className="rounded-lg p-1.5 text-slate-400 hover:bg-rose-500/20 hover:text-rose-400 transition"
             title="Delete product monitor"
           >

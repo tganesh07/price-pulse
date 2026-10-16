@@ -24,6 +24,7 @@ import { EditDealModal } from './components/EditDealModal';
 import { PriceHistoryModal } from './components/PriceHistoryModal';
 import { GitFileManagerModal } from './components/GitFileManagerModal';
 import { SettingsModal } from './components/SettingsModal';
+import { DeleteConfirmModal } from './components/DeleteConfirmModal';
 import { NotificationToast } from './components/NotificationToast';
 import { 
   getNotificationPermission, 
@@ -54,6 +55,7 @@ export default function App() {
   const [isAddOpen, setIsAddOpen] = useState(false);
   const [editingDeal, setEditingDeal] = useState<DealItem | null>(null);
   const [historyDeal, setHistoryDeal] = useState<DealItem | null>(null);
+  const [deletingDeal, setDeletingDeal] = useState<DealItem | null>(null);
   const [isGitOpen, setIsGitOpen] = useState(false);
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
 
@@ -175,12 +177,19 @@ export default function App() {
   };
 
   const handleDeleteDeal = async (id: string) => {
-    if (!confirm('Are you sure you want to stop tracking this item?')) return;
     try {
+      // Optimistic instant UI update
+      setDeals((prev) => prev.filter((d) => d.id !== id));
       const res = await fetch(`/api/deals/${id}`, { method: 'DELETE' });
-      if (res.ok) {
-        setDeals((prev) => prev.filter((d) => d.id !== id));
+      if (!res.ok) {
+        // If server failed, reload
+        loadDeals();
+        throw new Error('Failed to delete on server');
       }
+      setActiveToast({
+        deal: null,
+        message: 'Product removed from deal tracker and data/deals.json',
+      });
     } catch (err) {
       console.error('Delete failed:', err);
     }
@@ -503,7 +512,7 @@ export default function App() {
                 onTestNotification={handleTestNotification}
                 onOpenHistory={(d) => setHistoryDeal(d)}
                 onEdit={(d) => setEditingDeal(d)}
-                onDelete={handleDeleteDeal}
+                onDelete={(d) => setDeletingDeal(d)}
               />
             ))}
           </div>
@@ -564,6 +573,13 @@ export default function App() {
         settings={settings}
         onSaveSettings={handleSaveSettings}
         sampleDeal={deals[0]}
+      />
+
+      <DeleteConfirmModal
+        isOpen={!!deletingDeal}
+        deal={deletingDeal}
+        onClose={() => setDeletingDeal(null)}
+        onConfirmDelete={handleDeleteDeal}
       />
 
       {/* In-app Toast Banner */}

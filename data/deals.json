@@ -53,50 +53,6 @@
     ]
   },
   {
-    "id": "deal-dewalt-drill-kit",
-    "title": "DEWALT 20V MAX Cordless Drill / Driver Kit (Compact 1/2-Inch)",
-    "make": "DEWALT",
-    "model": "DCD771C2",
-    "sku": "DCD771C2",
-    "url": "https://www.homedepot.com/p/DEWALT-20V-MAX-Cordless-1-2-in-Drill-Driver-Kit-with-2-20V-1-3Ah-Batteries-Charger-and-Bag-DCD771C2/204279858",
-    "favoriteWebsites": [
-      "Home Depot",
-      "Amazon",
-      "Lowe's"
-    ],
-    "targetPrice": 99,
-    "currentPrice": 99,
-    "initialPrice": 119,
-    "lowestPrice": 99,
-    "currency": "USD",
-    "inStock": true,
-    "isTriggered": true,
-    "notifyOnDropOnly": true,
-    "lastCheckedAt": "2026-10-14T16:53:22.473Z",
-    "status": "triggered",
-    "imageUrl": "https://images.thdstatic.com/productImages/599e693b-e01c-4b55-b44c-e87f8eb4f9d0/svn/dewalt-drills-dcd771c2-64_600.jpg",
-    "category": "Power Tools",
-    "notes": "Target $99 met! Price drop alert active.",
-    "history": [
-      {
-        "id": "hist-3",
-        "timestamp": "2026-10-10T09:00:00.000Z",
-        "price": 119,
-        "retailer": "Home Depot",
-        "inStock": true,
-        "statusMessage": "Checked price"
-      },
-      {
-        "id": "hist-4",
-        "timestamp": "2026-10-14T12:00:00.000Z",
-        "price": 99,
-        "retailer": "Home Depot",
-        "inStock": true,
-        "statusMessage": "Target price reached: $99.00!"
-      }
-    ]
-  },
-  {
     "id": "deal-sony-wh1000xm5",
     "title": "Sony WH-1000XM5 Wireless Noise-Canceling Headphones",
     "make": "Sony",
